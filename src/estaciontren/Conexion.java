@@ -25,5 +25,23 @@ public class Conexion {
         
     }
     
-    
+    public String ObtenerId(){
+        String id=null;
+        
+        String Consulta="Select MAX(idFactura)as Factura from Pasajero";
+        ResultSet rs;
+        Statement st;
+        try {
+            st=Conectar().createStatement();
+            rs=st.executeQuery(Consulta);
+            if(rs.next()){
+                  String idCompra=rs.getString("Factura");
+             id=(idCompra);
+            }
+        } catch (Exception e) {
+        }
+        
+        return id;
+        
+    }
 }

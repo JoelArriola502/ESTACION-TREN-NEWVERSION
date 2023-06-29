@@ -4,6 +4,8 @@
  */
 package estaciontren;
 
+import com.mysql.cj.jdbc.ConnectionWrapper;
+
 /**
  *
  * @author Joel Arriola
@@ -16,6 +18,8 @@ public class ESTACIONTREN {
     public static void main(String[] args) {
       Conexion Conetar=new Conexion();
       Conetar.Conectar();
+       
+        System.out.println("id es "+Conetar.ObtenerId());
     }
     
 }
